@@ -30,10 +30,20 @@ function App() {
 
   return (
     <>
+
       <div className='container'>
         <h1>Lista articoli</h1>
 
-        <div className='list-group'>
+        <form onSubmit={submit}>
+          <input
+            type="text"
+            placeholder='Aggiungi nuovo articolo'
+            value={newProduct}
+            onChange={(e) => setNewProduct(e.target.value)}
+          />
+        </form>
+
+        <div className='list-group mt-3'>
           {products.map(product => (
 
             <div key={product.id} className='list-group-item'>{product.name}</div>
@@ -42,6 +52,8 @@ function App() {
         </div>
 
       </div>
+
+
     </>
 
   )
