@@ -16,9 +16,17 @@ function App() {
   return (
     <>
       <div className='container'>
-        <h1>Il mio Blog</h1>
+        <h1>Lista articoli</h1>
 
         {/* todo - lista di articoli */}
+        <div className='list-group'>
+          {products.map(product => (
+
+            <div key={product.id} className='list-group-item'>{product.name}</div>
+
+          ))}
+        </div>
+
       </div>
     </>
 
