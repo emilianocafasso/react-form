@@ -5,20 +5,23 @@ import './App.css'
 
 function App() {
 
-  const products = [
+  // stato dei prodotti
+  const [products, setProducts] = useState([
     { id: 1, name: 'Microfono' },
     { id: 2, name: 'Webcam' },
     { id: 3, name: 'Mouse' },
     { id: 4, name: 'Tastiera' },
     { id: 5, name: 'Cuffie' }
-  ]
+  ])
+
+  // stato per l'input del form
+  const [newProduct, setNewProduct] = useState("")
 
   return (
     <>
       <div className='container'>
         <h1>Lista articoli</h1>
 
-        {/* todo - lista di articoli */}
         <div className='list-group'>
           {products.map(product => (
 
