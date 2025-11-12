@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -16,6 +14,19 @@ function App() {
 
   // stato per l'input del form
   const [newProduct, setNewProduct] = useState("")
+
+  const submit = (e) => {
+    e.preventDefault()
+
+
+    const newItem = {
+      id: products.length + 1,
+      name: newProduct
+    }
+
+    setProducts([...products, newItem])
+    setNewProduct('')
+  }
 
   return (
     <>
